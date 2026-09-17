@@ -1,0 +1,295 @@
+/* ===== variáveis ===== */
+:root {
+    --cor-primaria: #1a2a5a;
+    --cor-fundo: #ffffff;
+    --cor-lateral: #f4f6f9;
+    --cor-texto: #1b2230;
+    --cor-cinza: #5d6675;
+    --cor-destaque: #00875a;
+    --cor-linha: #dde3ea;
+    --espaco: 16px;
+    --largura-max: 1200px;
+}
+
+/* ===== reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== base ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    color: var(--cor-texto);
+    background: var(--cor-fundo);
+}
+
+h1, h2, h3 {
+    color: var(--cor-primaria);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+}
+
+a {
+    color: var(--cor-destaque);
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+address {
+    font-style: normal;
+}
+
+section {
+    scroll-margin-top: var(--espaco);
+}
+
+/* ===== layout ===== */
+
+body {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    grid-template-areas: "header header" "nav nav" "aside main" "footer footer";
+    gap: var(--espaco);
+    max-width: var(--largura-max);
+    margin: 0 auto;
+    padding: var(--espaco);
+    min-height: 100vh;
+}
+
+.cabecalho { grid-area: header; }
+.menu      { grid-area: nav; }
+.lateral   { grid-area: aside; }
+.conteudo  { grid-area: main; }
+.rodape    { grid-area: footer; }
+
+/* ===== componentes ===== */
+
+/* header */
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--espaco);
+    padding-bottom: var(--espaco);
+    border-bottom: 1px solid var(--cor-linha);
+}
+
+.subtitulo {
+    color: var(--cor-cinza);
+}
+
+.contactos-rapidos {
+    display: flex;
+    gap: var(--espaco);
+}
+
+.contactos-rapidos a {
+    border: 1px solid var(--cor-destaque);
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 0.9rem;
+}
+
+/* nav */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--espaco)*2);
+    padding-bottom: var(--espaco);
+    border-bottom: 1px solid var(--cor-linha);
+}
+
+.menu a {
+    color: var(--cor-primaria);
+    font-weight: 500;
+}
+
+/*aside*/
+.lateral {
+    background: var(--cor-lateral);
+    padding: calc(var(--espaco)*1.5);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--espaco)*1.5);
+}
+
+.foto {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.lateral h2 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--cor-cinza);
+    margin-bottom: 8px;
+}
+
+.lateral li {
+    padding: 4px 0;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tags li {
+    border: 1px solid var(--cor-destaque);
+    border-radius: 99px;
+    padding: 2px 10px;
+    font-size: 0.85rem;
+    color: var(--cor-destaque);
+}
+
+.nivel {
+    float: right;
+    color: var(--cor-cinza);
+    font-size: 0.85rem;
+}
+
+/* main */
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--espaco) * 2.5);   /* 40px entre secções: o "ar" do Stitch */
+}
+
+.conteudo h2 {
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--cor-linha);   /* a linha fina por baixo de cada título */
+    margin-bottom: var(--espaco);
+}
+
+.conteudo article {
+    margin-bottom: var(--espaco);     /* espaço entre entradas da mesma secção */
+}
+
+.periodo {
+    color: var(--cor-cinza);
+    font-size: 0.9rem;
+    margin: 2px 0 8px;                /* cima 2, lados 0, baixo 8 */
+}
+
+#experiencia ul {
+    list-style: disc;                 /* as bolinhas voltam SÓ aqui */
+    padding-left: 20px;               /* senão as bolinhas ficam fora da caixa */
+}
+
+#formacao {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* os quatro cursos em 2×2 */
+    gap: var(--espaco);
+}
+
+#formacao h2 {
+    grid-column: 1 / -1;              /* o título atravessa as duas colunas */
+}
+
+.cartoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));   /* quantos cartões couberem */
+    gap: var(--espaco);
+}
+
+.cartao {
+    border: 1px solid var(--cor-linha);
+    border-radius: 8px;
+    padding: var(--espaco);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;                         /* h3, p e link empilhados com espaço igual */
+}
+
+.cartao a {
+    margin-top: auto;                 /* empurra o link para o fundo: todos alinham */
+    font-weight: 500;
+}
+
+/* estados */
+a:hover {
+    text-decoration: underline;       /* o sublinhado volta ao passar o rato */
+}
+
+.contactos-rapidos a:hover,
+.tags li:hover {
+    background: var(--cor-destaque);  /* o botão/pílula enche-se de verde… */
+    color: #ffffff;                   /* …e o texto passa a branco */
+    text-decoration: none;
+}
+
+.cartao:hover {
+    border-color: var(--cor-destaque);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);   /* levanta-se um pouco */
+}
+
+a:focus-visible {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 3px;              /* quem navega por Tab vê onde está */
+}
+
+/* ===== mobile (até 767px) ===== */
+@media (max-width: 767px) {
+
+    body {
+        grid-template-columns: 1fr;       /* uma coluna só */
+        grid-template-areas:
+            "header"
+            "nav"
+            "aside"
+            "main"
+            "footer";                     /* uma palavra por fila */
+    }
+
+    .cabecalho {
+        flex-direction: column;           /* nome em cima, botões em baixo */
+        align-items: flex-start;
+    }
+
+    .menu {
+        gap: var(--espaco);               /* menos espaço entre links: cabem mais por linha */
+    }
+
+    #formacao {
+        grid-template-columns: 1fr;       /* os cursos deixam de ser 2×2 */
+    }
+
+    .foto {
+        width: 120px;
+        height: 120px;
+    }
+}
