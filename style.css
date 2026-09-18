@@ -1,88 +1,88 @@
 /* ===== variáveis ===== */
-:root {
-    --cor-primaria: #1a2a5a;
-    --cor-fundo: #ffffff;
-    --cor-lateral: #f4f6f9;
-    --cor-texto: #1b2230;
-    --cor-cinza: #5d6675;
-    --cor-destaque: #00875a;
-    --cor-linha: #dde3ea;
-    --espaco: 16px;
-    --largura-max: 1200px;
+:root {                                   /* :root = o <html>: o que está aqui vale para a página toda */
+    --cor-primaria: #1a2a5a;              /* azul-escuro: títulos e links do menu */
+    --cor-fundo: #ffffff;                 /* branco: fundo da página */
+    --cor-lateral: #f4f6f9;               /* cinza muito claro: fundo do aside */
+    --cor-texto: #1b2230;                 /* quase preto: texto corrido */
+    --cor-cinza: #5d6675;                 /* cinza médio: subtítulo, datas, níveis */
+    --cor-destaque: #00875a;              /* verde: links, botões, pílulas */
+    --cor-linha: #dde3ea;                 /* cinza claro: linhas finas e bordas */
+    --espaco: 16px;                       /* a unidade de espaço; os outros são múltiplos com calc() */
+    --largura-max: 1200px;                /* a página não estica além disto em ecrãs grandes */
 }
 
 /* ===== reset ===== */
-* {
-    margin: 0;
+* {                                       /* * = todos os elementos */
+    margin: 0;                            /* tira as margens que o browser põe por defeito */
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box;               /* width passa a incluir padding e border: as contas batem certo */
 }
 
 /* ===== base ===== */
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth;              /* os links do menu deslizam em vez de saltar */
 }
 
 body {
-    font-family: system-ui, sans-serif;
-    line-height: 1.5;
+    font-family: system-ui, sans-serif;   /* a fonte do sistema; sans-serif é o plano B */
+    line-height: 1.5;                     /* altura de linha 1,5× a fonte: mais fácil de ler */
     color: var(--cor-texto);
     background: var(--cor-fundo);
 }
 
-h1, h2, h3 {
+h1, h2, h3 {                              /* vírgula = a mesma regra para os três */
     color: var(--cor-primaria);
-    line-height: 1.2;
+    line-height: 1.2;                     /* títulos mais apertados que o texto corrido */
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 2rem;                      /* rem = múltiplo da fonte base (16px): 32px */
 }
 
 h2 {
-    font-size: 1.4rem;
+    font-size: 1.4rem;                    /* ≈ 22px */
 }
 
 h3 {
-    font-size: 1.1rem;
+    font-size: 1.1rem;                    /* ≈ 18px */
 }
 
 a {
     color: var(--cor-destaque);
-    text-decoration: none;
+    text-decoration: none;                /* sem sublinhado; volta no :hover lá em baixo */
 }
 
 ul {
-    list-style: none;
+    list-style: none;                     /* sem bolinhas em lado nenhum… exceto na experiência */
 }
 
 img {
-    max-width: 100%;
-    display: block;
+    max-width: 100%;                      /* a imagem nunca é mais larga que a caixa onde está */
+    display: block;                       /* tira o espacinho fantasma por baixo (img é inline por defeito) */
 }
 
 address {
-    font-style: normal;
+    font-style: normal;                   /* o browser põe address em itálico; aqui não queremos */
 }
 
 section {
-    scroll-margin-top: var(--espaco);
+    scroll-margin-top: var(--espaco);     /* ao saltar por âncora, o título não fica colado ao topo */
 }
 
 /* ===== layout ===== */
 
-body {
+body {                                    /* segundo body: junta-se ao da base, não o substitui */
     display: grid;
-    grid-template-columns: 280px 1fr;
-    grid-template-areas: "header header" "nav nav" "aside main" "footer footer";
-    gap: var(--espaco);
+    grid-template-columns: 280px 1fr;     /* aside fixo com 280px, main fica com o resto */
+    grid-template-areas: "header header" "nav nav" "aside main" "footer footer";   /* o mapa: cada string é uma fila */
+    gap: var(--espaco);                   /* espaço entre as áreas */
     max-width: var(--largura-max);
-    margin: 0 auto;
-    padding: var(--espaco);
-    min-height: 100vh;
+    margin: 0 auto;                       /* auto dos lados = centrado no ecrã */
+    padding: var(--espaco);               /* para o conteúdo não tocar nas bordas do ecrã */
+    min-height: 100vh;                    /* pelo menos a altura do ecrã: o rodapé não sobe */
 }
 
-.cabecalho { grid-area: header; }
+.cabecalho { grid-area: header; }         /* cada classe diz em que área do mapa fica */
 .menu      { grid-area: nav; }
 .lateral   { grid-area: aside; }
 .conteudo  { grid-area: main; }
@@ -92,91 +92,91 @@ body {
 
 /* header */
 .cabecalho {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    display: flex;                        /* nome à esquerda, botões à direita */
+    justify-content: space-between;       /* empurra os dois blocos para as pontas */
+    align-items: center;                  /* alinhados a meio na vertical */
+    flex-wrap: wrap;                      /* se não couber, os botões passam para baixo */
     gap: var(--espaco);
     padding-bottom: var(--espaco);
-    border-bottom: 1px solid var(--cor-linha);
+    border-bottom: 1px solid var(--cor-linha);   /* a linha que separa o header do menu */
 }
 
 .subtitulo {
-    color: var(--cor-cinza);
+    color: var(--cor-cinza);              /* "Estudante UPSKILL, economista" em cinza */
 }
 
 .contactos-rapidos {
-    display: flex;
+    display: flex;                        /* os três botões lado a lado */
     gap: var(--espaco);
 }
 
 .contactos-rapidos a {
-    border: 1px solid var(--cor-destaque);
-    border-radius: 6px;
-    padding: 6px 14px;
+    border: 1px solid var(--cor-destaque);   /* o contorno verde faz o link parecer botão */
+    border-radius: 6px;                   /* cantos ligeiramente redondos */
+    padding: 6px 14px;                    /* cima/baixo 6, lados 14 */
     font-size: 0.9rem;
 }
 
 /* nav */
 .menu {
-    display: flex;
-    flex-wrap: wrap;
-    gap: calc(var(--espaco)*2);
+    display: flex;                        /* os links em linha */
+    flex-wrap: wrap;                      /* em ecrãs estreitos passam para a linha seguinte */
+    gap: calc(var(--espaco)*2);           /* 32px entre links */
     padding-bottom: var(--espaco);
     border-bottom: 1px solid var(--cor-linha);
 }
 
 .menu a {
-    color: var(--cor-primaria);
-    font-weight: 500;
+    color: var(--cor-primaria);           /* azul em vez do verde geral dos links */
+    font-weight: 500;                     /* meio-negrito */
 }
 
-/*aside*/
+/* aside */
 .lateral {
-    background: var(--cor-lateral);
-    padding: calc(var(--espaco)*1.5);
+    background: var(--cor-lateral);       /* a caixa cinza clara */
+    padding: calc(var(--espaco)*1.5);     /* 24px de folga interna */
     border-radius: 8px;
     display: flex;
-    flex-direction: column;
-    gap: calc(var(--espaco)*1.5);
+    flex-direction: column;               /* foto, contactos, competências… empilhados */
+    gap: calc(var(--espaco)*1.5);         /* 24px entre cada bloco */
 }
 
 .foto {
     width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 auto;
+    height: 200px;                        /* largura = altura: um quadrado… */
+    border-radius: 50%;                   /* …que com 50% vira círculo */
+    object-fit: cover;                    /* a imagem preenche o círculo sem esticar */
+    margin: 0 auto;                       /* centrada na lateral */
 }
 
 .lateral h2 {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    font-size: 0.8rem;                    /* títulos pequenos: são etiquetas, não secções */
+    text-transform: uppercase;            /* CONTACTOS, COMPETÊNCIAS… */
+    letter-spacing: 0.08em;               /* letras ligeiramente afastadas */
     color: var(--cor-cinza);
     margin-bottom: 8px;
 }
 
 .lateral li {
-    padding: 4px 0;
+    padding: 4px 0;                       /* respiração entre os itens da lista */
 }
 
 .tags {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;                      /* as pílulas quebram de linha quando não cabem */
     gap: 12px;
 }
 
 .tags li {
     border: 1px solid var(--cor-destaque);
-    border-radius: 99px;
+    border-radius: 99px;                  /* valor exagerado = pontas totalmente redondas */
     padding: 2px 10px;
     font-size: 0.85rem;
     color: var(--cor-destaque);
 }
 
 .nivel {
-    float: right;
+    float: right;                         /* "nativo", "C1"… encostados à direita da mesma linha */
     color: var(--cor-cinza);
     font-size: 0.85rem;
 }
@@ -277,7 +277,7 @@ a:focus-visible {
 
     .cabecalho {
         flex-direction: column;           /* nome em cima, botões em baixo */
-        align-items: flex-start;
+        align-items: flex-start;          /* encostados à esquerda */
     }
 
     .menu {
@@ -289,7 +289,7 @@ a:focus-visible {
     }
 
     .foto {
-        width: 120px;
+        width: 120px;                     /* foto mais pequena no telemóvel */
         height: 120px;
     }
 }
