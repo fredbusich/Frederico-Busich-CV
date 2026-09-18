@@ -5,42 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CV de Frederico Busich — formando em Programação JavaScript e ServiceNow (UPSKILL · IPCA), licenciado em Administração Pública e mestre em Economia Social.">
     <title>Frederico Busich - CV</title>
+    <link rel="icon" href="imagens/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="cabecalho">
-        <div>
+        <div class="cabecalho-interior">
+            <img class="foto" src="imagens/foto.jpg" alt="Foto de Frederico Busich">
             <h1>Frederico Busich</h1>
             <p class="subtitulo">Estudante UPSKILL, economista</p>
+            <address id="contactos">
+                <ul class="contactos-rapidos">
+                    <li><a href="mailto:fredbusich@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>fredbusich@gmail.com</a></li>
+                    <li><a href="tel:+351912795272"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+351 912 795 272</a></li>
+                    <li><a href="https://linkedin.com/in/frederico-busich" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></li>
+                    <li><a href="https://github.com/fredbusich" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>GitHub</a></li>
+                    <li><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Braga, Portugal</span></li>
+                    <li><a href="docs/cv-frederico-busich.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Descarregar PDF</a></li>
+                </ul>
+            </address>
         </div>
-        <ul class="contactos-rapidos">
-            <li><a href="mailto:fredbusich@gmail.com">Email</a></li>
-            <li><a href="https://linkedin.com/in/frederico-busich" target="_blank">Linkedin</a></li>
-            <li><a href="https://github.com/fredbusich" target="_blank">GitHub</a></li>
-        </ul>
     </header>
     <nav class="menu">     
         <a href="#sobre">Sobre</a>
-        <a href="#experiencia">Experiencia</a>
+        <a href="#experiencia">Experiência</a>
         <a href="#formacao">Formação</a>
+        <a href="#competencias">Competências</a>
         <a href="#projetos">Projetos</a>
         <a href="#contactos">Contactos</a>
     </nav>   
-    <aside class="lateral">
-        <img class="foto" src="imagens/foto.jpg" alt="Foto de Frederico Busich">
-        <section id="contactos">
-            <h2>Contactos</h2>
-            <address>
-                    <ul>
-                        <li><a href="mailto:fredbusich@gmail.com">fredbusich@gmail.com</a></li>
-                        <li><a href="tel:+351912795272">+351 912 795 272</a></li>
-                        <li><a href="https://linkedin.com/in/frederico-busich" target="_blank">linkedin.com/in/frederico-busich</a></li>
-                        <li><a href="https://github.com/fredbusich" target="_blank">github.com/fredbusich</a></li>
-                        <li>Braga, Portugal</li>
-                    </ul>
-            </address>
+    
+    <main class="conteudo">
+        <section id="sobre">
+            <h2>Sobre mim</h2>
+            <p>
+                Nascido no Brasil e vivendo em Portugal há cerca de sete anos, tenho 23 anos.
+                Sou licenciado em Administração Pública e mestre em Economia Social pela Universidade do Minho, com
+                experiência em apoio ao cliente em ambiente multilingue e de alto volume. Em 2026 entrei no programa
+                UPSKILL para dar o salto para a tecnologia: JavaScript, desenvolvimento web e a plataforma ServiceNow,
+                áreas que me interessam pela forma como podem digitalizar e melhorar os serviços das organizações.
+            </p>
         </section>
-        <section>
+        <section id="experiencia">
+            <h2>Experiência</h2>
+            <article class="entrada">
+                <h3>Agente de Apoio ao Cliente · Team Support — Concentrix, Braga</h3>
+                <p class="periodo"><time datetime="2025-01">jan 2025</time> – <time datetime="2026-07">jul 2026</time></p>
+                <ul>
+                    <li>Cerca de 30 interações diárias com clientes num ambiente multilingue e de alto volume, 
+                        resolvendo pedidos com rigor dentro dos procedimentos definidos</li>
+                    <li>Casos escalados e referência de processos para os outros agentes — 
+                        apoio e partilha de conhecimento com a equipa</li>
+                    <li>Gestão de reclamações e conflitos sob pressão, com abordagem calma, precisa e centrada no cliente</li>
+                </ul>
+            </article>
+            <article class="entrada">
+                <h3>Rececionista de Hotel — Terrace House, Braga</h3>
+                <p class="periodo"><time datetime="2024-01">jan 2024</time> – <time datetime="2025-01">jan 2025</time></p>
+                <ul>
+                    <li>Atendimento multilingue, gestão de reservas, check-in/check-out e faturação</li>
+                    <li>Coordenação entre departamentos</li>
+                </ul>
+            </article>
+        </section>
+        <section id="formacao">
+            <h2>Formação</h2>
+            <div class="grelha-2">
+            <article class="entrada">
+                <h3> UPSKILL · IPCA</h3>
+                <p class="periodo"><time datetime="2026-07">jul 2026</time> – presente</p>
+                <p>Programa nacional de competências digitais: JavaScript e a plataforma ServiceNow para a digitalização de serviços organizacionais. Módulo 1 (Fundamentos Web): HTML5 semântico, CSS3, Flexbox, Grid, Git e GitHub.</p>
+            </article>
+            <article class="entrada">
+                <h3>Mestrado em Economia Social — Universidade do Minho, Braga</h3>
+                <p class="periodo"><time datetime="2023">2023</time> – <time datetime="2025">2025</time></p>
+                <p>Nota final 15/20 (QEQ 7). Dissertação: <em>O combate à pobreza em contexto local: perspetivas institucionais a partir de Braga</em>.</p>
+            </article>
+            <article class="entrada">
+                <h3>Licenciatura em Administração Pública — Universidade do Minho, Braga</h3>
+                <p class="periodo"><time datetime="2020">2020</time> – <time datetime="2023">2023</time></p>
+                <p>Nota final 14/20 (QEQ 6) · 180 ECTS. Contabilidade, finanças públicas, métodos quantitativos, auditoria e direito administrativo.</p>
+            </article>
+            <article class="entrada">
+                <h3>Introdução ao STATA — Universidade do Minho</h3>
+                <p class="periodo"><time datetime="2025-10">out 2025</time> · microcredencial</p>
+                <p>Análise de dados para ciências sociais e estudos de mercado.</p>
+            </article>
+            </div>
+        </section>
+        <section id="competencias">
             <h2>Competências</h2>
             <ul class="tags">
                 <li>HTML5</li>
@@ -54,80 +107,25 @@
                 <li>STATA</li>
                 <li>MS Office</li>
             </ul>
-        </section>
-        <section>
-            <h2>Línguas</h2>
-                <ul>
-                    <li>Português <span class="nivel">nativo</span></li>
-                    <li>Inglês <span class="nivel">C2</span></li>
-                    <li>Espanhol <span class="nivel">A2</span></li>
-                </ul>
-        </section>
-        <section>
-            <h2>Pontos fortes</h2>
-                <ul>
-                    <li>Orientação para o cliente</li>
-                    <li>Rigor e fiabilidade em trabalho de processo</li>
-                    <li>Multitarefa sob pressão</li>
-                    <li>Colaborativo e em aprendizagem contínua</li>
-                </ul>
-        </section>
-    </aside>
-    <main class="conteudo">
-        <section id="sobre">
-            <h2>Sobre mim</h2>
-            <p>
-                Nascido no Brasil e em Portugal há cerca de sete anos, tenho 23 anos e vontade de me aventurar pelo mundo.
-                Sou licenciado em Administração Pública e mestre em Economia Social pela Universidade do Minho, com
-                experiência em apoio ao cliente em ambiente multilingue e de alto volume. Em 2026 entrei no programa
-                UPSKILL para dar o salto para a tecnologia: JavaScript, desenvolvimento web e a plataforma ServiceNow,
-                áreas que me interessam pela forma como podem digitalizar e melhorar os serviços das organizações.
-            </p>
-        </section>
-        <section id="experiencia">
-            <h2>Experiência</h2>
-                <article>
-                    <h3>Agente de Apoio ao Cliente · Team Support — Concentrix, Braga</h3>
-                    <p class="periodo"><time datetime="2025-01">jan 2025</time> – <time datetime="2026-07">jul 2026</time></p>
-                    <ul>
-                        <li>Cerca de 30 interações diárias com clientes num ambiente multilingue e de alto volume, 
-                            resolvendo pedidos com rigor dentro dos procedimentos definidos</li>
-                        <li>Casos escalados e referência de processos para os outros agentes — 
-                            apoio e partilha de conhecimento com a equipa</li>
-                        <li>Gestão de reclamações e conflitos sob pressão, com abordagem calma, precisa e centrada no cliente</li>
+            <div class="grelha-2">
+                <div>
+                    <h3>Línguas</h3>
+                    <ul class="linguas">
+                        <li>Português <span class="nivel">nativo</span></li>
+                        <li>Inglês <span class="nivel">C2</span></li>
+                        <li>Espanhol <span class="nivel">A2</span></li>
                     </ul>
-                </article>
-                <article>
-                    <h3>Rececionista de Hotel — Terrace House, Braga</h3>
-                    <p class="periodo"><time datetime="2024-01">jan 2024</time> – <time datetime="2025-01">jan 2025</time></p>
-                    <ul>
-                        <li>Atendimento multilingue, gestão de reservas, check-in/check-out e faturação</li>
-                        <li>Coordenação entre departamentos</li>
+                </div>
+                <div>
+                    <h3>Pontos fortes</h3>
+                    <ul class="pontos">
+                        <li>Orientação para o cliente</li>
+                        <li>Rigor e fiabilidade em trabalho de processo</li>
+                        <li>Multitarefa sob pressão</li>
+                        <li>Colaborativo e em aprendizagem contínua</li>
                     </ul>
-                </article>
-        </section>
-        <section id="formacao">
-            <h2>Formação</h2>
-            <article>
-                <h3>UFCD Programação em JavaScript — UPSKILL Digital Skills &amp; Jobs · IPCA</h3>
-                <p class="periodo"><time datetime="2026-07">jul 2026</time> – presente</p>
-                <p>Programa nacional de competências digitais: JavaScript e a plataforma ServiceNow para a digitalização de serviços organizacionais. Módulo 1 (Fundamentos Web): HTML5 semântico, CSS3, Flexbox, Grid, Git e GitHub.</p>
-            </article>
-            <article>
-                <h3>Mestrado em Economia Social — Universidade do Minho, Braga</h3>
-                <p class="periodo"><time datetime="2023">2023</time> – <time datetime="2025">2025</time></p>
-                <p>Nota final 15/20 (QEQ 7). Dissertação: <em>O combate à pobreza em contexto local: perspetivas institucionais a partir de Braga</em>.</p>
-            </article>
-            <article>
-                <h3>Licenciatura em Administração Pública — Universidade do Minho, Braga</h3>
-                <p class="periodo"><time datetime="2020">2020</time> – <time datetime="2023">2023</time></p>
-                <p>Nota final 14/20 (QEQ 6) · 180 ECTS. Contabilidade, finanças públicas, métodos quantitativos, auditoria e direito administrativo.</p>
-            </article>
-            <article>
-                <h3>Introdução ao STATA — Universidade do Minho</h3>
-                <p class="periodo"><time datetime="2025-10">out 2025</time> · microcredencial</p>
-                <p>Análise de dados para ciências sociais e estudos de mercado.</p>
-            </article>
+                </div>
+            </div>
         </section>
         <section id="projetos">
             <h2>Projetos</h2>
@@ -135,22 +133,22 @@
                 <article class="cartao">
                     <h3>Réplica da página inicial do IPCA</h3>
                     <p>HTML semântico e CSS com Flexbox — exercício do Módulo 1 de Fundamentos Web.</p>
-                    <a href="https://github.com/fredbusich/PRATICA-02" target="_blank">Ver no GitHub →</a>
+                    <a href="https://github.com/fredbusich/PRATICA-02" target="_blank" rel="noopener">Ver no GitHub →</a>
                 </article>
                 <article class="cartao">
                     <h3>Exercícios de Fundamentos Web</h3>
                     <p>Estrutura HTML, media, formulários com validação nativa e fundamentos de CSS.</p>
-                    <a href="https://github.com/fredbusich/exercicios-02-Programacao-JS" target="_blank">Ver no GitHub →</a>
+                    <a href="https://github.com/fredbusich/exercicios-02-Programacao-JS" target="_blank" rel="noopener">Ver no GitHub →</a>
                 </article>
                 <article class="cartao">
                     <h3>Este CV</h3>
                     <p>Página pessoal em HTML semântico e CSS Grid/Flexbox, publicada em GitHub Pages.</p>
-                    <a href="https://github.com/fredbusich/Frederico-Busich-CV" target="_blank">Ver no GitHub →</a>
+                    <a href="https://github.com/fredbusich/Frederico-Busich-CV" target="_blank" rel="noopener">Ver no GitHub →</a>
                 </article>
                 <article class="cartao">
                     <h3>Projeto VoltGo</h3>
                     <p>JavaScript e SQL, com base em algoritmia e programação, para aplicação em base de dados.</p>
-                    <a href="https://github.com/kirat01313/Projct-UpSkill-VolGo-0.3-JS-BD" target="_blank">Ver no GitHub →</a>
+                    <a href="https://github.com/kirat01313/Projct-UpSkill-VolGo-0.3-JS-BD" target="_blank" rel="noopener">Ver no GitHub →</a>
                 </article>
             </div>
         </section>
